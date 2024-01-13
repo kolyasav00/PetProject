@@ -1,0 +1,66 @@
+﻿@page
+@model PetProject.Pages.tableTasks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TableTasks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TableTasks.Id" />
+            <div class="form-group">
+                <label asp-for="TableTasks.Status" class="control-label"></label>
+                <input asp-for="TableTasks.Status" class="form-control" />
+                <span asp-validation-for="TableTasks.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.NameTask" class="control-label"></label>
+                <input asp-for="TableTasks.NameTask" class="form-control" />
+                <span asp-validation-for="TableTasks.NameTask" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.NameProject" class="control-label"></label>
+                <input asp-for="TableTasks.NameProject" class="form-control" />
+                <span asp-validation-for="TableTasks.NameProject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.Work" class="control-label"></label>
+                <input asp-for="TableTasks.Work" class="form-control" />
+                <span asp-validation-for="TableTasks.Work" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.DateStart" class="control-label"></label>
+                <input asp-for="TableTasks.DateStart" class="form-control" />
+                <span asp-validation-for="TableTasks.DateStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.DateEnd" class="control-label"></label>
+                <input asp-for="TableTasks.DateEnd" class="form-control" />
+                <span asp-validation-for="TableTasks.DateEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableTasks.Performer" class="control-label"></label>
+                <input asp-for="TableTasks.Performer" class="form-control" />
+                <span asp-validation-for="TableTasks.Performer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

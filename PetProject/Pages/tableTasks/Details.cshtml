@@ -1,0 +1,62 @@
+﻿@page
+@model PetProject.Pages.tableTasks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TableTasks</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.NameTask)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.NameTask)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.NameProject)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.NameProject)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.Work)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.Work)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.DateStart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.DateStart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.DateEnd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.DateEnd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TableTasks.Performer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TableTasks.Performer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TableTasks?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
