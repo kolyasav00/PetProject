@@ -21,7 +21,7 @@ namespace PetProject.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<TableProjects> tableProjects { get; set; }
+        public DbSet<TableProjects?> tableProjects { get; set; }
 
         public DbSet<TableTasks> tableTasks { get; set; }
 

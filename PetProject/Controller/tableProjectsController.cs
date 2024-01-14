@@ -7,45 +7,45 @@ namespace PetProject.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class tableProjectsController : ControllerBase
+    public class TableProjectsController : ControllerBase
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public tableProjectsController(ApplicationDbContext context)
+        public TableProjectsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<TableProjects> Get()
+        public IEnumerable<TableProjects?> Get()
         {
             return _context.tableProjects;
         }
-        [HttpGet("{id}")]
-        public TableProjects Get(int id)
+        [HttpGet("{id:int}")]
+        public TableProjects? Get(int id)
         {
             return _context.tableProjects.FirstOrDefault(x => x.Id == id);
         }
         [HttpPost]
-        public void Post([FromBody] TableProjects tableProjects)
+        public void Post([FromBody] TableProjects? tableProjects)
         {
             _context.tableProjects.Add(tableProjects);
             _context.SaveChanges();
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableProjects tableProjects)
         {
-            var tableProjectFromDB = _context.tableProjects.Find(id);
-            tableProjectFromDB.Name = tableProjects.Name;
-            tableProjectFromDB.Disctiption = tableProjects.Disctiption;
+            var tableProjectFromDb = _context.tableProjects.Find(id);
+            tableProjectFromDb.Name = tableProjects.Name;
+            tableProjectFromDb.Disctiption = tableProjects.Disctiption;
 
-            _context.tableProjects.Update(tableProjectFromDB);
+            _context.tableProjects.Update(tableProjectFromDb);
             _context.SaveChanges();
         }
         [HttpDelete]
         public void Delete(int id)
         {
-            var tableProjectFromDB = _context.tableProjects.Find(id);
+            _context.tableProjects.Find(id);
             _context.SaveChanges();
         }
     }

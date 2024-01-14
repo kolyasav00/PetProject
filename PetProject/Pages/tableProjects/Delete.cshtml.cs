@@ -20,7 +20,7 @@ namespace PetProject.Pages.tableProjects
         }
 
         [BindProperty]
-      public TableProjects tableProjects { get; set; } = default!;
+      public TableProjects? tableProjects { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
