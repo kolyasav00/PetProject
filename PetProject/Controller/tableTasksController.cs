@@ -9,50 +9,51 @@ namespace PetProject.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class tableTasksController : ControllerBase
+    public class TableTasksController : ControllerBase
     {
-        private ApplicationDbContext _context;
+        public readonly ApplicationDbContext Context;
 
-        private tableTasksController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private TableTasksController(ApplicationDbContext context) => Context = context;
 
         [HttpGet]
-        public IEnumerable<TableTasks> Get() => _context.tableTasks;
+        public IEnumerable<TableTasks> Get() => Context.tableTasks;
 
-        [HttpGet("{id}")]
-        public TableTasks Get(int id) => _context.tableTasks.FirstOrDefault(x => x.Id == id);
+        [HttpGet("{id:int}")]
+        public TableTasks Get(int id) => Context.tableTasks.FirstOrDefault(x => x.Id == id);
 
         [HttpPost]
         public void Post([FromBody] TableTasks tableTasks)
         {
-            _context.tableTasks.Add(tableTasks);
-            _context.SaveChanges();
+            Context.tableTasks.Add(tableTasks);
+            Context.SaveChanges();
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableTasks tableTasks)
         {
-            var tableTasksFromDB = _context.tableTasks.Find(id);
-            tableTasksFromDB.Status = tableTasks.Status;
-            tableTasksFromDB.NameTask = tableTasks.NameTask;
-            tableTasksFromDB.NameProject = tableTasks.NameProject;
-            tableTasksFromDB.Work = tableTasks.Work;
-            tableTasksFromDB.DateStart = tableTasks.DateStart;
-            tableTasksFromDB.DateEnd = tableTasks.DateEnd;
-            tableTasksFromDB.Performer = tableTasks.Performer;
+            var tableTasksFromDb = Context.tableTasks.Find(id);
+            if (tableTasksFromDb != null)
+            {
+                tableTasksFromDb.Status = tableTasks.Status;
+                tableTasksFromDb.NameTask = tableTasks.NameTask;
+                tableTasksFromDb.NameProject = tableTasks.NameProject;
+                tableTasksFromDb.Work = tableTasks.Work;
+                tableTasksFromDb.DateStart = tableTasks.DateStart;
+                tableTasksFromDb.DateEnd = tableTasks.DateEnd;
+                tableTasksFromDb.Performer = tableTasks.Performer;
 
-            _context.tableTasks.Update(tableTasksFromDB);
-            _context.SaveChanges();
+                Context.tableTasks.Update(tableTasksFromDb);
+            }
+
+            Context.SaveChanges();
         }
 
         [HttpDelete]
         public void Delete(int id)
         {
-            var tabelTasksFromDB = _context.tableTasks.Find(id);
-            _context.tableTasks.Remove(tabelTasksFromDB);
-            _context.SaveChanges();
+            var tabelTasksFromDb = Context.tableTasks.Find(id);
+            if (tabelTasksFromDb != null) Context.tableTasks.Remove(tabelTasksFromDb);
+            Context.SaveChanges();
         }
     }
 }
