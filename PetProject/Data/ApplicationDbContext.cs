@@ -23,8 +23,8 @@ namespace PetProject.Data
 
         public DbSet<TableProjects?> tableProjects { get; set; }
 
-        public DbSet<TableTasks> tableTasks { get; set; }
+        public DbSet<TableTasks?> tableTasks { get; set; }
 
-        public DbSet<TableEmployees> tableEmployees { get; set; }
+        public DbSet<TableEmployees?> tableEmployees { get; set; }
     }
 }

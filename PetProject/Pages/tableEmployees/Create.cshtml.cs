@@ -25,7 +25,7 @@ namespace PetProject.Pages.tableEmployees
         }
 
         [BindProperty]
-        public TableEmployees TableEmployees { get; set; } = default!;
+        public TableEmployees? TableEmployees { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

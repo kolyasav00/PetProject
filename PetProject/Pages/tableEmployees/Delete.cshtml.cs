@@ -20,7 +20,7 @@ namespace PetProject.Pages.tableEmployees
         }
 
         [BindProperty]
-      public TableEmployees TableEmployees { get; set; } = default!;
+      public TableEmployees? TableEmployees { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -19,7 +19,7 @@ namespace PetProject.Pages.tableEmployees
             _context = context;
         }
 
-        public IList<TableEmployees> TableEmployees { get;set; } = default!;
+        public IList<TableEmployees?> TableEmployees { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

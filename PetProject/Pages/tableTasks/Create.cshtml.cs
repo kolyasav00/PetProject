@@ -25,7 +25,7 @@ namespace PetProject.Pages.tableTasks
         }
 
         [BindProperty]
-        public TableTasks TableTasks { get; set; } = default!;
+        public TableTasks? TableTasks { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

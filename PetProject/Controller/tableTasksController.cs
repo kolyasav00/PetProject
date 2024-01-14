@@ -16,13 +16,13 @@ namespace PetProject.Controller
         private TableTasksController(ApplicationDbContext context) => Context = context;
 
         [HttpGet]
-        public IEnumerable<TableTasks> Get() => Context.tableTasks;
+        public IEnumerable<TableTasks?> Get() => Context.tableTasks;
 
         [HttpGet("{id:int}")]
-        public TableTasks Get(int id) => Context.tableTasks.FirstOrDefault(x => x.Id == id);
+        public TableTasks? Get(int id) => Context.tableTasks.FirstOrDefault(x => x != null && x.Id == id);
 
         [HttpPost]
-        public void Post([FromBody] TableTasks tableTasks)
+        public void Post([FromBody] TableTasks? tableTasks)
         {
             Context.tableTasks.Add(tableTasks);
             Context.SaveChanges();
