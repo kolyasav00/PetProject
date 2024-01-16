@@ -19,14 +19,11 @@ namespace PetProject.Pages.tableProjects
             _context = context;
         }
 
-        public IList<TableProjects?> tableProjects { get;set; } = default!;
+        public List<TableProjects> tableProjects { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.tableProjects != null)
-            {
-                tableProjects = await _context.tableProjects.ToListAsync();
-            }
+            tableProjects = await _context.TableProjects.ToListAsync();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetProject.Data;
 using PetProject.Data.Migrations;
@@ -17,42 +19,63 @@ namespace PetProject.Controller
             _context = context;
         }
 
+        /// <summary>
+        /// Find employees in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<TableEmployees?> Get()
         {
-            return _context.tableEmployees;
+            return _context.TableEmployees;
         }
+        /// <summary>
+        /// Find employees in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public TableEmployees? Get(int id)
         {
-            return _context.tableEmployees.FirstOrDefault(x => x.Id == id);
+            return _context.TableEmployees.FirstOrDefault(x => x.Id == id);
         }
-
+        /// <summary>
+        /// Add new employees in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public void Post([FromBody] TableEmployees? tableEmployees)
         {
-            _context.tableEmployees.Add(tableEmployees);
+            if (tableEmployees != null) _context.TableEmployees.Add(tableEmployees);
             _context.SaveChanges();
         }
-
+        /// <summary>
+        /// Update employees in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableEmployees tableEmployees)
         {
-            var tableEmployeesfromDb = _context.tableEmployees.Find(id);
-            tableEmployeesfromDb.FirstName = tableEmployees.FirstName;
-            tableEmployeesfromDb.LastName = tableEmployees.LastName;
-            tableEmployeesfromDb.SurName = tableEmployees.SurName;
-            tableEmployeesfromDb.jobTitel = tableEmployees.jobTitel;
+            var tableEmploymentDb = _context.TableEmployees.Find(id);
+            if (tableEmploymentDb != null)
+            {
+                tableEmploymentDb.FirstName = tableEmployees.FirstName;
+                tableEmploymentDb.LastName = tableEmployees.LastName;
+                tableEmploymentDb.SurName = tableEmployees.SurName;
+                tableEmploymentDb.JobTitel = tableEmployees.JobTitel;
 
-            _context.tableEmployees.Update(tableEmployeesfromDb);
+                _context.TableEmployees.Update(tableEmploymentDb);
+            }
+
             _context.SaveChanges();
         }
-
+        /// <summary>
+        /// Delete employees in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete]
         public void Delete(int id)
         {
-            var tableEmployeesfromDb = _context.tableEmployees.Find(id);
-            _context.tableEmployees.Remove(tableEmployeesfromDb);
+            var tableEmploymentDb = _context.TableEmployees.Find(id);
+            if (tableEmploymentDb != null) _context.TableEmployees.Remove(tableEmploymentDb);
             _context.SaveChanges();
         }
     }

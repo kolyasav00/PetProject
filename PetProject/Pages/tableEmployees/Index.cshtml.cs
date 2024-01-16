@@ -10,10 +10,12 @@ using PetProject.Data;
 
 namespace PetProject.Pages.tableEmployees
 {
+    /// <inheritdoc />
     public class IndexModel : PageModel
     {
         private readonly PetProject.Data.ApplicationDbContext _context;
 
+        /// <inheritdoc />
         public IndexModel(PetProject.Data.ApplicationDbContext context)
         {
             _context = context;
@@ -23,9 +25,9 @@ namespace PetProject.Pages.tableEmployees
 
         public async Task OnGetAsync()
         {
-            if (_context.tableEmployees != null)
+            if (_context.TableEmployees != null)
             {
-                TableEmployees = await _context.tableEmployees.ToListAsync();
+                TableEmployees = await _context.TableEmployees.ToListAsync();
             }
         }
     }

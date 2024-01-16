@@ -24,12 +24,12 @@ namespace PetProject.Pages.tableEmployees
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.tableEmployees == null)
+            if (id == null || _context.TableEmployees == null)
             {
                 return NotFound();
             }
 
-            var tableemployees = await _context.tableEmployees.FirstOrDefaultAsync(m => m.Id == id);
+            var tableemployees = await _context.TableEmployees.FirstOrDefaultAsync(m => m.Id == id);
 
             if (tableemployees == null)
             {
@@ -44,16 +44,16 @@ namespace PetProject.Pages.tableEmployees
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.tableEmployees == null)
+            if (id == null || _context.TableEmployees == null)
             {
                 return NotFound();
             }
-            var tableemployees = await _context.tableEmployees.FindAsync(id);
+            var tableemployees = await _context.TableEmployees.FindAsync(id);
 
             if (tableemployees != null)
             {
                 TableEmployees = tableemployees;
-                _context.tableEmployees.Remove(TableEmployees);
+                _context.TableEmployees.Remove(TableEmployees);
                 await _context.SaveChangesAsync();
             }
 

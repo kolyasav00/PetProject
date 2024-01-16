@@ -16,15 +16,15 @@ namespace PetProject.Data
             builder.Entity<TableEmployees>().Property(z => z.Id).UseIdentityColumn();
             builder.Entity<TableEmployees>().Property(z => z.LastName).HasMaxLength(30);
             builder.Entity<TableEmployees>().Property(z => z.FirstName).HasMaxLength(30);
-            builder.Entity<TableEmployees>().Property(z => z.jobTitel).HasMaxLength(30);
+            builder.Entity<TableEmployees>().Property(z => z.JobTitel).HasMaxLength(30);
 
             base.OnModelCreating(builder);
         }
 
-        public DbSet<TableProjects?> tableProjects { get; set; }
+        public DbSet<TableProjects> TableProjects { get; set; }
 
-        public DbSet<TableTasks?> tableTasks { get; set; }
+        public DbSet<TableTasks> TableTasks { get; set; }
 
-        public DbSet<TableEmployees?> tableEmployees { get; set; }
+        public DbSet<TableEmployees> TableEmployees { get; set; }
     }
 }

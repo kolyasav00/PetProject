@@ -23,10 +23,7 @@ namespace PetProject.Pages.tableTasks
 
         public async Task OnGetAsync()
         {
-            if (_context.tableTasks != null)
-            {
-                TableTasks = await _context.tableTasks.ToListAsync();
-            }
+            TableTasks = await _context.TableTasks.ToListAsync();
         }
     }
 }

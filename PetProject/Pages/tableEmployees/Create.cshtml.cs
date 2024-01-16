@@ -31,12 +31,12 @@ namespace PetProject.Pages.tableEmployees
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.tableEmployees == null || TableEmployees == null)
+          if (!ModelState.IsValid || _context.TableEmployees == null || TableEmployees == null)
             {
                 return Page();
             }
 
-            _context.tableEmployees.Add(TableEmployees);
+            _context.TableEmployees.Add(TableEmployees);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

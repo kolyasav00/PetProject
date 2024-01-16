@@ -20,16 +20,16 @@ namespace PetProject.Pages.tableProjects
         }
 
         [BindProperty]
-      public TableProjects? tableProjects { get; set; } = default!;
+      public TableProjects? TableProjects { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.tableProjects == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var tableprojects = await _context.tableProjects.FirstOrDefaultAsync(m => m.Id == id);
+            var tableprojects = await _context.TableProjects.FirstOrDefaultAsync(m => m != null && m.Id == id);
 
             if (tableprojects == null)
             {
@@ -37,23 +37,23 @@ namespace PetProject.Pages.tableProjects
             }
             else 
             {
-                tableProjects = tableprojects;
+                TableProjects = tableprojects;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.tableProjects == null)
+            if (id == null || _context.TableProjects == null)
             {
                 return NotFound();
             }
-            var tableprojects = await _context.tableProjects.FindAsync(id);
+            var tableprojects = await _context.TableProjects.FindAsync(id);
 
             if (tableprojects != null)
             {
-                tableProjects = tableprojects;
-                _context.tableProjects.Remove(tableProjects);
+                TableProjects = tableprojects;
+                _context.TableProjects.Remove(TableProjects);
                 await _context.SaveChangesAsync();
             }
 

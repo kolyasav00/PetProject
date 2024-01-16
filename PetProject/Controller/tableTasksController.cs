@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetProject.Areas.Identity;
 using PetProject.Data;
@@ -11,27 +13,30 @@ namespace PetProject.Controller
     [ApiController]
     public class TableTasksController : ControllerBase
     {
-        public readonly ApplicationDbContext Context;
+        private readonly ApplicationDbContext _context;
 
-        private TableTasksController(ApplicationDbContext context) => Context = context;
+        public TableTasksController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public IEnumerable<TableTasks?> Get() => Context.tableTasks;
+        public IEnumerable<TableTasks?> Get() => _context.TableTasks;
 
         [HttpGet("{id:int}")]
-        public TableTasks? Get(int id) => Context.tableTasks.FirstOrDefault(x => x != null && x.Id == id);
+        public TableTasks? Get(int id) => _context.TableTasks.FirstOrDefault(x => x != null && x.Id == id);
 
         [HttpPost]
         public void Post([FromBody] TableTasks? tableTasks)
         {
-            Context.tableTasks.Add(tableTasks);
-            Context.SaveChanges();
+            if (tableTasks != null) _context.TableTasks.Add(tableTasks);
+            _context.SaveChanges();
         }
 
         [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableTasks tableTasks)
         {
-            var tableTasksFromDb = Context.tableTasks.Find(id);
+            var tableTasksFromDb = _context.TableTasks.Find(id);
             if (tableTasksFromDb != null)
             {
                 tableTasksFromDb.Status = tableTasks.Status;
@@ -42,18 +47,18 @@ namespace PetProject.Controller
                 tableTasksFromDb.DateEnd = tableTasks.DateEnd;
                 tableTasksFromDb.Performer = tableTasks.Performer;
 
-                Context.tableTasks.Update(tableTasksFromDb);
+                _context.TableTasks.Update(tableTasksFromDb);
             }
 
-            Context.SaveChanges();
+            _context.SaveChanges();
         }
 
         [HttpDelete]
         public void Delete(int id)
         {
-            var tabelTasksFromDb = Context.tableTasks.Find(id);
-            if (tabelTasksFromDb != null) Context.tableTasks.Remove(tabelTasksFromDb);
-            Context.SaveChanges();
+            var tableTasksFromDb = _context.TableTasks.Find(id);
+            if (tableTasksFromDb != null) _context.TableTasks.Remove(tableTasksFromDb);
+            _context.SaveChanges();
         }
     }
 }

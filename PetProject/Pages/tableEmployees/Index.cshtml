@@ -11,20 +11,21 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table>
+    <caption class="table" >
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TableEmployees[0].LastName)
+                @Html.DisplayNameFor(model => model.TableEmployees[0]!.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TableEmployees[0].FirstName)
+                @Html.DisplayNameFor(model => model.TableEmployees[0]!.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TableEmployees[0].SurName)
+                @Html.DisplayNameFor(model => model.TableEmployees[0]!.SurName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TableEmployees[0].jobTitel)
+                @Html.DisplayNameFor(model => model.TableEmployees[0]!.JobTitel)
             </th>
             <th></th>
         </tr>
@@ -33,23 +34,23 @@
 @foreach (var item in Model.TableEmployees) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item!.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item!.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SurName)
+                @Html.DisplayFor(modelItem => item!.SurName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.jobTitel)
+                @Html.DisplayFor(modelItem => item!.JobTitel)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@if (item != null) {@item.Id }">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@if (item != null) {@item.Id }">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@if (item != null) {@item.Id }">Delete</a>
             </td>
         </tr>
 }
-    </tbody>
+    </tbody></caption>
 </table>

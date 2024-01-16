@@ -31,12 +31,12 @@ namespace PetProject.Pages.tableProjects
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.tableProjects == null || tableProjects == null)
+          if (!ModelState.IsValid || _context.TableProjects == null || tableProjects == null)
             {
                 return Page();
             }
 
-            _context.tableProjects.Add(tableProjects);
+            _context.TableProjects.Add(tableProjects);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

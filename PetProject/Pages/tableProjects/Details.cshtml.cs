@@ -23,12 +23,12 @@ namespace PetProject.Pages.tableProjects
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.tableProjects == null)
+            if (id == null || _context.TableProjects == null)
             {
                 return NotFound();
             }
 
-            var tableprojects = await _context.tableProjects.FirstOrDefaultAsync(m => m.Id == id);
+            var tableprojects = await _context.TableProjects.FirstOrDefaultAsync(m => m != null && m.Id == id);
             if (tableprojects == null)
             {
                 return NotFound();

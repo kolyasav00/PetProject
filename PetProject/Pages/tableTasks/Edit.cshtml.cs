@@ -25,12 +25,12 @@ namespace PetProject.Pages.tableTasks
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.tableTasks == null)
+            if (id == null || _context.TableTasks == null)
             {
                 return NotFound();
             }
 
-            var tabletasks =  await _context.tableTasks.FirstOrDefaultAsync(m => m.Id == id);
+            var tabletasks =  await _context.TableTasks.FirstOrDefaultAsync(m => m.Id == id);
             if (tabletasks == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace PetProject.Pages.tableTasks
 
         private bool TableTasksExists(int id)
         {
-          return (_context.tableTasks?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.TableTasks?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
