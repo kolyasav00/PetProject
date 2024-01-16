@@ -41,6 +41,8 @@ namespace PetProject.Controller
         /// Add new employees in table. 
         /// </summary>
         /// <returns></returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>
         [HttpPost]
         public void Post([FromBody] TableEmployees? tableEmployees)
         {
