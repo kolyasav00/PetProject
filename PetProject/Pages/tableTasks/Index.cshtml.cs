@@ -19,7 +19,7 @@ namespace PetProject.Pages.tableTasks
             _context = context;
         }
 
-        public IList<TableTasks?> TableTasks { get;set; } = default!;
+        public List<TableTasks> TableTasks { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

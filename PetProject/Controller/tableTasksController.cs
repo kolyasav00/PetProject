@@ -9,12 +9,14 @@ using SQLitePCL;
 
 namespace PetProject.Controller
 {
+    /// <inheritdoc />
     [Route("api/[controller]")]
     [ApiController]
     public class TableTasksController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
+        /// <inheritdoc/>
         public TableTasksController(ApplicationDbContext context)
         {
             _context = context;
@@ -70,7 +72,7 @@ namespace PetProject.Controller
         /// Delete task in table by ID. 
         /// </summary>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public void Delete(int id)
         {
             var tableTasksFromDb = _context.TableTasks.Find(id);

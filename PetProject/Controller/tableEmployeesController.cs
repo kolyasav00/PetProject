@@ -73,7 +73,7 @@ namespace PetProject.Controller
         /// Delete employees in table by ID. 
         /// </summary>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public void Delete(int id)
         {
             var tableEmploymentDb = _context.TableEmployees.Find(id);

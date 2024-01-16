@@ -69,7 +69,7 @@ namespace PetProject.Controller
         /// Delete project in table by ID. 
         /// </summary>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public void Delete(int id)
         {
             _context.TableProjects.Find(id);
