@@ -17,23 +17,38 @@ namespace PetProject.Controller
         {
             _context = context;
         }
-
+        /// <summary>
+        /// Find project in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<TableProjects?> Get()
         {
             return _context.TableProjects;
         }
+        /// <summary>
+        /// Find project in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public TableProjects? Get(int id)
         {
             return _context.TableProjects.FirstOrDefault(x => x.Id == id);
         }
+        /// <summary>
+        /// Add new project in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public void Post([FromBody] TableProjects? tableProjects)
         {
             if (tableProjects != null) _context.TableProjects.Add(tableProjects);
             _context.SaveChanges();
         }
+        /// <summary>
+        /// Update project in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableProjects tableProjects)
         {
@@ -48,6 +63,10 @@ namespace PetProject.Controller
 
             _context.SaveChanges();
         }
+        /// <summary>
+        /// Delete project in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete]
         public void Delete(int id)
         {
