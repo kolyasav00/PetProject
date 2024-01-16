@@ -19,20 +19,32 @@ namespace PetProject.Controller
         {
             _context = context;
         }
-
+        /// <summary>
+        /// Find task in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<TableTasks?> Get() => _context.TableTasks;
-
+        /// <summary>
+        /// Find task in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public TableTasks? Get(int id) => _context.TableTasks.FirstOrDefault(x => x != null && x.Id == id);
-
+        /// <summary>
+        /// Add new task in table. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public void Post([FromBody] TableTasks? tableTasks)
         {
             if (tableTasks != null) _context.TableTasks.Add(tableTasks);
             _context.SaveChanges();
         }
-
+        /// <summary>
+        /// Update task in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] TableTasks tableTasks)
         {
@@ -52,7 +64,10 @@ namespace PetProject.Controller
 
             _context.SaveChanges();
         }
-
+        /// <summary>
+        /// Delete task in table by ID. 
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete]
         public void Delete(int id)
         {
