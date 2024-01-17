@@ -8,6 +8,7 @@ using PetProject.Areas.Identity;
 
 namespace PetProject.Controller
 {
+    //TODO rename name pages TableEmployeesController -> ListEmployeesController
     [Route("api/[controller]")]
     [ApiController]
     public class TableEmployeesController : ControllerBase

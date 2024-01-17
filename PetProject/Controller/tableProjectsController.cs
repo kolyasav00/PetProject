@@ -9,6 +9,7 @@ namespace PetProject.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    //TODO rename name pages TableProjectsController -> ListProjectsController
     public class TableProjectsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

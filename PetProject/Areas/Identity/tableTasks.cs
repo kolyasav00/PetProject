@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
+//TODO rename name pages tableTasks -> TaskList
 namespace PetProject.Areas.Identity
 {
     [Table("TableTasks", Schema = "data")]
@@ -14,6 +15,7 @@ namespace PetProject.Areas.Identity
 
         public string? NameProject { get; set; }
 
+        //TODO rename var
         public string? Work {  get; set; }
 
         public DateTime DateStart { get; set; }

@@ -2,6 +2,7 @@
 
 namespace PetProject.Areas.Identity
 {
+    //TODO rename name pages tableEmployees -> TaskEmployees
     [Table("TableEmployees", Schema = "data")]
     public class TableEmployees
     {
