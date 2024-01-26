@@ -22,3 +22,9 @@ ____
 |----------------|:---------:|----------------:|----------------:|
 | Savitski | Nikolai | Sergeevich | .Net developer |
 ____
+//TODO 
+## How to Install and Run the Project
+### If you have Visual Studio
+1. Open VS
+2. Click field "Clone a repository"
+3. 
