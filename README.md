@@ -26,5 +26,10 @@ ____
 ## How to Install and Run the Project
 ### If you have Visual Studio
 1. Open VS
-2. Click field "Clone a repository"
-3. 
+2. Click field "Clone a repository".
+3. Open browser and past link: https://github.com/kolyasav00/PetProject
+4. Click the green button "Code".
+5. Copy HTTPS link.
+6. Go to VS and past in field "Repository location" link and click button clone.
+7. Wait and after application load click green triangle button "Pet Project".
+
