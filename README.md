@@ -33,3 +33,39 @@ ____
 6. Go to VS and past in field "Repository location" link and click button clone.
 7. Wait and after application load click green triangle button "Pet Project".
 
+### If you dont have Visual Studio
+TODO write this part
+1. Download rep project.
+2. Open file in folder project ...\PetProject\PetProject\bin\Debug\net6.0\PetProject.exe
+3. In borwser open page: https://localhost:7262/swagger/index.htmlp
+4. 
+____
+TODO
+## How to Use the Project
+Project have 4 fields: TableEmployees, TabelProjects, TableTasksa and Schemas.
+Field TableEmployees have filds:
+1. Get - find task in table.
+2. Post - add new task in table.
+3. Get(id) - find task in tabke by ID.
+4. Put - Update task in table by ID.
+5. Delete - Delete task in table by ID.
+### Get
+Have 2 fields: 
+1. Parameters - no parameters in this type of HTTP Request.
+2. Responses - 
+
+Field TableProject have filds:
+1. Get - find task in table.
+2. Post - add new task in table.
+3. Get(id) - find task in tabke by ID.
+4. Put - Update task in table by ID.
+5. Delete - Delete task in table by ID.
+
+Field TableTasks have filds:
+1. Get - find task in table.
+2. Post - add new task in table.
+3. Get(id) - find task in tabke by ID.
+4. Put - Update task in table by ID.
+5. Delete - Delete task in table by ID.
+
+
