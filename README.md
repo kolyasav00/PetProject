@@ -2,14 +2,14 @@
 It's web application for managing the tasks the team is working on and what projects they are working on.
 ____
 ## What application does.
-1. Application have forms personal account settings if you registe, registration and loging.
-2. Application have database with 3 lists and 3 pages: Emplayees, Tasks, Projects.
-   + 2.1 On the page "Projects" forms: "Add new project", "Edit project", "Delete project" and list "Projects". List have table with fields: name, description. All filds have type string.
-   + 2.2 On the page "Tasks" forms: "Add new task", "Edit task", "Delete task" and list "Tasks". List have table with fields: Status, Name, Project name, Work, DateStart, DateEnd, Performer. Filds: Status,Name, Project Name, Work, Performer have type string, DateStart, DateEnd have type Date.
-   + 2.3 On the page "Employees" forms: "Add new employee", "Edit employee", "Delete employee" and list "Employees". List have table with fields: Last Name, First name, Surname, Job Titel. Filds: Last Name, First name, Sure name, Job Titel have type string.
+1. Application have forms personal account settings if you register, registration and lodging.
+2. Application have database with 3 lists and 3 pages: Employees, Tasks, Projects.
+   + 2.1 On the page "Projects" forms: "Add new project", "Edit project", "Delete project" and list "Projects". List have table with fields: name, description. All fields have type string.
+   + 2.2 On the page "Tasks" forms: "Add new task", "Edit task", "Delete task" and list "Tasks". List have table with fields: Status, Name, Project name, Work, DateStart, DateEnd, Performer. Fields: Status,Name, Project Name, Work, Performer have type string, DateStart, DateEnd have type Date.
+   + 2.3 On the page "Employees" forms: "Add new employee", "Edit employee", "Delete employee" and list "Employees". List have table with fields: Last Name, First name, Surname, Job Titel. Fields: Last Name, First name, Sure name, Job Titel have type string.
 ____
 ## Database description
-### Tabel "Projects"(example).
+### Table "Projects"(example).
 | Name | Description |
 |----------------|:---------:|
 | Task management | It's web application for managing the tasks the team is working on and what projects they are working on.|
@@ -35,10 +35,10 @@ ____
 ### If you dont have Visual Studio
 1. Download rep project.
 2. Open file in folder project ...\PetProject\PetProject\bin\Debug\net6.0\PetProject.exe
-3. In borwser open page: https://localhost:7262/swagger/index.html
+3. In browser open page: https://localhost:7262/swagger/index.html
 ____
 ## How to Use the Project
-Project have 4 fields: "TableEmployees", "TabelProjects", "TableTasksa" and "Schemas".
+Project have 4 fields: "TableEmployees", "TabelProjects", "TableTasks" and "Schemas".
 
 ### Field TableEmployees have lines:
 1. Get - find all tasks in table.
@@ -51,17 +51,17 @@ Project have 4 fields: "TableEmployees", "TabelProjects", "TableTasksa" and "Sch
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request and have only button "try it out".
    1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
 
 #### Post
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request, have "Request body", "Example value" and button "Try it out".
-   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" apeare button "Clear"(clear field "Responses"), field where need enter data. 
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" appeared button "Clear"(clear field "Responses"), field where need enter data. 
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
 
 #### Get(id)
 Have 2 fields: 
@@ -69,9 +69,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
    
 #### Put(id)
 Have 2 fields: 
@@ -79,9 +79,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses") and field where need enter editing data.
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
    
 #### Delete(id)
 Have 2 fields: 
@@ -89,9 +89,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter deleting data by id
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response headers.
    
 ### Field TableProject have lines:
 1. Get - find all projects in table.
@@ -104,17 +104,17 @@ Have 2 fields:
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request and have only button "try it out".
    1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
 
 #### Post
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request, have "Request body", "Example value" and button "Try it out".
-   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" apeare button "Clear"(clear field "Responses"), field where need enter data. 
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" appeared button "Clear"(clear field "Responses"), field where need enter data. 
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
 
 #### Get(id)
 Have 2 fields: 
@@ -122,9 +122,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
    
 #### Put(id)
 Have 2 fields: 
@@ -132,9 +132,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses") and field where need enter editing data.
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
    
 #### Delete(id)
 Have 2 fields: 
@@ -142,9 +142,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter deleting data by id
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response headers.
    
 ### Field TableTasks have lines:
 1. Get - find all tasks in table.
@@ -157,17 +157,17 @@ Have 2 fields:
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request and have only button "try it out".
    1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
 
 #### Post
 Have 2 fields: 
 1. Parameters - no parameters in this type of HTTP Request, have "Request body", "Example value" and button "Try it out".
-   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" apeare button "Clear"(clear field "Responses"), field where need enter data. 
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+   1.1. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), after click "Execute" appear button "Clear"(clear field "Responses"), field where need enter data. 
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
 
 #### Get(id)
 Have 2 fields: 
@@ -175,9 +175,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response body and response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out" and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response body and response headers.
    
 #### Put(id)
 Have 2 fields: 
@@ -185,9 +185,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter searching field by id. 
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses") and field where need enter editing data.
-2. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have response headers.
+2. Responses - show codes response.
+   2.1. If you click button "Try it out", enter data, enter id and click "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have response headers.
    
 #### Delete(id)
 Have 2 fields: 
@@ -195,9 +195,9 @@ Have 2 fields:
    1.1. Column "Name" have name searching field(id).
    1.2. Column "Description" have field where need enter deleting data by id
    1.3. If you click button "Try it out" will appear 2 buttons: Execute(appear all table), Clear(clear field "Responses").
-3. Responses - show codes responce.
-   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server reseponse.
-   2.2. Server reseponse have 2 columns: code and details. Column "code" show code responce; column "Details" have field response headers.
+3. Responses - show codes response.
+   2.1. If you click button "Try it out", enter id and next "Execute" will appear fields: curl, request url and server response.
+   2.2. Server response have 2 columns: code and details. Column "code" show code response; column "Details" have field response headers.
 
    
 ### Field "Schemas" have lines: 
