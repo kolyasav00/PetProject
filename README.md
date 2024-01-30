@@ -31,11 +31,6 @@ ____
 5. Copy HTTPS link.
 6. Go to VS and past in field "Repository location" link and click button clone.
 7. Wait and after application load click green triangle button "Pet Project".
-
-### If you dont have Visual Studio
-1. Download rep project.
-2. Open file in folder project ...\PetProject\PetProject\bin\Debug\net6.0\PetProject.exe
-3. In browser open page: https://localhost:7262/swagger/index.html
 ____
 ## How to Use the Project
 Project have 4 fields: "TableEmployees", "TabelProjects", "TableTasks" and "Schemas".
