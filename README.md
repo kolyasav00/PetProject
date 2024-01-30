@@ -33,7 +33,6 @@ ____
 7. Wait and after application load click green triangle button "Pet Project".
 
 ### If you dont have Visual Studio
-TODO write this part
 1. Download rep project.
 2. Open file in folder project ...\PetProject\PetProject\bin\Debug\net6.0\PetProject.exe
 3. In borwser open page: https://localhost:7262/swagger/index.html
