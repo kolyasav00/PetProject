@@ -22,7 +22,6 @@ ____
 |----------------|:---------:|----------------:|----------------:|
 | Savitski | Nikolai | Sergeevich | .Net developer |
 ____
-//TODO 
 ## How to Install and Run the Project
 ### If you have Visual Studio
 1. Open VS
@@ -37,8 +36,7 @@ ____
 TODO write this part
 1. Download rep project.
 2. Open file in folder project ...\PetProject\PetProject\bin\Debug\net6.0\PetProject.exe
-3. In borwser open page: https://localhost:7262/swagger/index.htmlp
-4. 
+3. In borwser open page: https://localhost:7262/swagger/index.html
 ____
 ## How to Use the Project
 Project have 4 fields: "TableEmployees", "TabelProjects", "TableTasksa" and "Schemas".
